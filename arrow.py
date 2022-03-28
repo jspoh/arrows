@@ -33,7 +33,8 @@ class Game:
         self.current_symbol = ''
         self.player_choice = ''
         self.score = 0
-        self.highscore = 0
+        with open('arrow_highscore.txt') as hsfile:
+            self.highscore = int(hsfile.read())
 
     def choice(self):
         self.current = random.choice(CHOICES)
@@ -55,6 +56,9 @@ class Game:
     def check_highscore(self):
         if self.score > self.highscore:
             self.highscore = self.score
+            with open('arrow_highscore.txt', mode='w') as hsfile:
+                hsfile.write(str(self.highscore))
+
 
 
 class Draw:

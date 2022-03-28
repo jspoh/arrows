@@ -9,4 +9,4 @@ Game features:
 - Controlled with arrow keys and WASD
 - Randomized symbol and words each signifying a direction
 - Time bar that gets progressively faster
-- Highscore system (not writing to a .txt file because people might be unhappy im creating files on their devices lol)
+- Highscore system (different for every device since the highscores are recorded by writing to a .txt file)

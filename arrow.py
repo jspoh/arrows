@@ -33,8 +33,14 @@ class Game:
         self.current_symbol = ''
         self.player_choice = ''
         self.score = 0
-        with open('arrow_highscore.txt') as hsfile:
-            self.highscore = int(hsfile.read())
+        self.highscore = 0
+        try:
+            with open('arrow_highscore.txt') as hsfile:
+                self.highscore = int(hsfile.read())
+        except FileNotFoundError:
+            print("Creating arrow_highscore.txt file..")
+            with open('arrow_highscore.txt', mode='w') as hsfile:
+                hsfile.write('0')
 
     def choice(self):
         self.current = random.choice(CHOICES)

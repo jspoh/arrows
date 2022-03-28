@@ -47,7 +47,7 @@ class Game:
             draw.barx = 100
             self.player_choice = ''
             self.score += 1
-            draw.bar_speed += .1
+            draw.bar_speed += .05
             self.choice()
         else:
             gameover()
